@@ -6,7 +6,9 @@ function movetoNext(current, nextFieldID) {
 
 function renderText(cardTextid,inputTextid, placeholder){
     if (inputTextid.value) {
-    cardTextid.textContent = inputTextid.value 
+        cardTextid.textContent = inputTextid.value 
+        inputTextid.setAttribute("required",'');
+
     } else {    cardTextid.textContent = `${placeholder}`}
 }
 
