@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+ 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="./index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+<body>
+
+  <div id="bkgrd-left"> </div>
+  
+  <div id="card-preview">
+    <div id="card-front">
+      <p id="card-num">0000 0000 0000 0000</p>
+      <div id="name-date">
+        <p id="card-name">Jane Appleseed</p>
+        <p id="card-date"> <span id="card-mm">MM</span>/<span id="card-yy">YY</span></p>
+      </div>
+    </div>
+  
+    <div id="card-back">
+      <p id="card-cvv">000</p>
+    </div>
+  </div>
+
+
+  <div id= "white-partition">
+    <div id="content-right" class="  content-right" >
+
+      <form>
+
+
+        <label for="input-name">Cardholder Name</label>
+        <input type="text" id="input-name" maxlength="25" name="input-name" placeholder="e.g. Jane Appleseed"><br><br>
+
+        <label for="input-card-number"> Card Number </label>
+        <input type="text" pattern="(\d{4})(?: *)(\d{4})(?: *)(\d{4})(?: *)(\d{4})(?: *)" id="input-card-number" maxlength="19" name="input-card-number" placeholder=" e.g. 1234 5678 9123 0000"><br><br>
+        
+        <div class="exp-cvc">
+          <div id="mmyy-div">
+            <label for="lname">  Exp. Date (MM/YY) </label> <br>
+            <input type="text" pattern='(0[1-9])|(1[0-2])' id="MM" maxlength="2" name="MM" placeholder=" MM">
+            <input type="text" pattern='(2[2-9])|([2-9]\d)' id="YY" maxlength="2" name="YY" placeholder=" YY">
+          </div>
+
+          <div id="cvv-div">
+            <label for="CVC">  CVC </label><br>
+            <input type="text" pattern='\d{3}' id="CVC" maxlength="3" name="CVC" placeholder=" e.g. 123"> <br>
+          </div>
+        </div>
+
+        <input id="submit" type="submit" value="Confirm">
+      </form>
+
+    </div>
+
+   <!-- Completed state start -->
+    <div id='done-div' class="content-right hide">
+      <img alt="" src="./images/icon-complete.svg">
+      <h2>Thank you!</h2>
+      <p>We've added your card details</p>
+      <button id="continue">Continue</button>
+    </div>
+  </div>
+
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/code-Allahtosin" target="_blank"  rel="noopener noreferrer">Muhammad A</a>.
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'> </script>
+  <script src="index.js">  </script>
+</body>
+</html>
