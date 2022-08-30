@@ -79,7 +79,6 @@ label {
     
 }
 
-
 #card-back{
     background-image: url('./images/bg-card-back.png');
     position:relative; 
@@ -92,6 +91,38 @@ label {
     box-sizing: border-box;
     box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
 
+
+
+}
+
+.card-images{
+    position:absolute;
+    height:82px; /*add 2px for margin*/
+    width:40%;
+    
+}
+
+#card-picture-div{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    top:50%;
+    transform: translateY(-50%);
+
+
+}
+#card-circle-div{
+    position: absolute;
+    left:60px;
+    top:50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+
+    border:1px solid white;
+    border-radius: 50%;
 
 
 }
