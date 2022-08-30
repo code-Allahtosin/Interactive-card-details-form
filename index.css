@@ -1,313 +1,617 @@
-/* 
-- White: hsl(0, 0%, 100%)
-- Light grayish violet: hsl(270, 3%, 87%)
-- Dark grayish violet: hsl(279, 6%, 55%)
-- Very dark violet: hsl(278, 68%, 11%) 
+    /* 
+    - White: hsl(0, 0%, 100%)
+    - Light grayish violet: hsl(270, 3%, 87%)
+    - Dark grayish violet: hsl(279, 6%, 55%)
+    - Very dark violet: hsl(278, 68%, 11%) 
 
 
-- Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
-- Red (input errors): hsl(0, 100%, 66%)
-*/
+    - Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+    - Red (input errors): hsl(0, 100%, 66%)
+    */
+@media only screen and (min-width: 900px) {
+    body{
+        display: grid;
+        position: relative;
+        grid-template-columns: 463px auto ;
+        min-height: 100vh;
+        height: 100%;
+        grid-gap: 20px;
+        font-family: 'Space Grotesk', sans-serif;
+        min-width: 700px;
+        font-size: 18px;
+        font-weight: 500;
+        color: hsl(270, 3%, 95%);
+        
 
-body{
-    display: grid;
-    position: relative;
-    grid-template-columns: 463px auto ;
-    min-height: 100vh;
-    height: 100%;
-    grid-gap: 20px;
-    font-family: 'Space Grotesk', sans-serif;
-    min-width: 700px;
-    font-size: 18px;
-    font-weight: 500;
-    color: hsl(270, 3%, 95%);
-    
-
-}
-
-div{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    
-
-
-}
-
-label {
-    text-transform: uppercase;
-    font-size: 13px; 
-    letter-spacing: 1.5px; 
-    text-shadow: 0px 0px 2px hsla(279, 6%, 55%, 0.5) ;
-}
-
-
-#card-preview{
-    position: relative;
-    left: 120px;
-    height: 570px;
-    top:50%;
-    transform: translateY(-50%)
-
-}
-
-
-#bkgrd-left{
-    grid-column: 1/2;
-    position: absolute;
-    z-index: -1;
-    background-image: url('./images/bg-main-desktop.png');
-    width: 465px;
-    background-size: cover;
-    height:100%;
-
-}
-
-#card-front{
-    position:relative;
-    top: 0px;
-    background-image: url('./images/bg-card-front.png');
-    margin: 20px;
-    height:245px;
-    width:447px;
-    background-repeat: no-repeat;
-    padding: 25px;
-    box-sizing: border-box;
-    font-weight: 400;
-    box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
-    
-}
-
-#card-back{
-    background-image: url('./images/bg-card-back.png');
-    position:relative; 
-    top: 17px;
-    left: 90px;
-    height:245px;
-    width:447px;
-    background-repeat: no-repeat;
-    margin: 20px;
-    box-sizing: border-box;
-    box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
-
-
-
-}
-
-.card-images{
-    position:absolute;
-    height:82px; /*add 2px for margin*/
-    width:40%;
-    
-}
-
-#card-picture-div{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: white;
-    border-radius: 50%;
-    top:50%;
-    transform: translateY(-50%);
-
-
-}
-#card-circle-div{
-    position: absolute;
-    left:60px;
-    top:50%;
-    transform: translateY(-50%);
-    width: 25px;
-    height: 25px;
-
-    border:1px solid white;
-    border-radius: 50%;
-
-
-}
-
-#card-num{
-    position: relative;
-    top: 115px;
-    color: white;
-    max-width: 440px;
-    text-align:start;
-    letter-spacing: 0.14em;
-    margin: 0px auto;
-    font-size: 28px;
-    
-
-
-}
-
-#card-name{
-    position:relative;
-    text-transform: uppercase;
-    justify-content: end;
-
-}
-
-#name-date{
-    position: relative;
-    top: 132px;
-    margin-bottom: auto;
-    display:flex;
-    gap: 10px;
-    justify-content: space-between;
-    margin: 0px;
-    box-sizing: border-box;
-    padding: 0px;
-    font-size: 13.3px;
-    letter-spacing: 0.17em;
-    
-}
-
-#card-date{
-    position:relative;
-
-}
-
-#card-cvv{
-    position:relative;
-    top: 113px;
-
-    left: 50px;
-    width:345px;
-    padding-left: 280px;
-    box-sizing: border-box;
-
-    font-size: 14px;
-    letter-spacing: 0.17em;
-}
-
-#white-partition{
-    grid-column: 2/3;
-    position: relative;
-    color: hsl(278, 68%, 11%);
-    min-width: 700px;
-    width: 100%;
-    height:100%;
-    color: hsl(278, 68%, 11%);
-    align-items: center;
-    justify-content:center;
-    display: flex;
-
-}
-
-.content-right{
-    position: absolute;
-    margin: 30px 0px;
-    top: 50%;
-    transform: translateY(-50%); 
-    padding: 0px 220px ;
-    width: 700px;
-    height: 400px;
-
-}
-    #content-right input{
-        border-radius: 10px;
-        margin-top: 7px;
-        padding: 10px 15px;
-        width:350px;
-        border: 1px solid hsl(270, 3%, 87%) ;
     }
-    ::placeholder{ 
-        color: hsl(270, 3%, 87%);
+
+    div{
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        
+
+
+    }
+
+    label {
+        text-transform: uppercase;
+        font-size: 13px; 
+        letter-spacing: 1.5px; 
+        text-shadow: 0px 0px 2px hsla(279, 6%, 55%, 0.5) ;
+    }
+
+
+    #card-preview{
+        position: relative;
+        left: 120px;
+        height: 570px;
+        top:50%;
+        transform: translateY(-50%)
+
+    }
+
+
+    #bkgrd-left{
+        grid-column: 1/2;
+        position: absolute;
+        z-index: -1;
+        background-image: url('./images/bg-main-desktop.png');
+        width: 465px;
+        background-size: cover;
+        height:100%;
+
+    }
+
+    #card-front{
+        position:relative;
+        top: 0px;
+        background-image: url('./images/bg-card-front.png');
+        margin: 20px;
+        height:245px;
+        width:447px;
+        background-repeat: no-repeat;
+        padding: 25px;
+        box-sizing: border-box;
+        font-weight: 400;
+        box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
+        
+    }
+
+    #card-back{
+        background-image: url('./images/bg-card-back.png');
+        position:relative; 
+        top: 17px;
+        left: 90px;
+        height:245px;
+        width:447px;
+        background-repeat: no-repeat;
+        margin: 20px;
+        box-sizing: border-box;
+        box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
+
+
+
+    }
+
+    .card-images{
+        position:absolute;
+        height:82px; /*add 2px for margin*/
+        width:40%;
+        
+    }
+
+    #card-picture-div{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        top:50%;
+        transform: translateY(-50%);
+
+
+    }
+    #card-circle-div{
+        position: absolute;
+        left:60px;
+        top:50%;
+        transform: translateY(-50%);
+        width: 25px;
+        height: 25px;
+
+        border:1px solid white;
+        border-radius: 50%;
+
+
+    }
+
+    #card-num{
+        position: relative;
+        top: 115px;
+        color: white;
+        max-width: 440px;
+        text-align:start;
+        letter-spacing: 0.14em;
+        margin: 0px auto;
+        font-size: 28px;
+        
+
+
+    }
+
+    #card-name{
+        position:relative;
+        text-transform: uppercase;
+        justify-content: end;
+
+    }
+
+    #name-date{
+        position: relative;
+        top: 132px;
+        margin-bottom: auto;
+        display:flex;
+        gap: 10px;
+        justify-content: space-between;
+        margin: 0px;
+        box-sizing: border-box;
+        padding: 0px;
+        font-size: 13.3px;
+        letter-spacing: 0.17em;
+        
+    }
+
+    #card-date{
+        position:relative;
+
+    }
+
+    #card-cvv{
+        position:relative;
+        top: 113px;
+
+        left: 50px;
+        width:345px;
+        padding-left: 280px;
+        box-sizing: border-box;
+
+        font-size: 14px;
+        letter-spacing: 0.17em;
+    }
+
+    #white-partition{
+        grid-column: 2/3;
+        position: relative;
+        color: hsl(278, 68%, 11%);
+        min-width: 700px;
+        width: 100%;
+        height:100%;
+        color: hsl(278, 68%, 11%);
+        align-items: center;
+        justify-content:center;
+        display: flex;
+
+    }
+
+    .content-right{
+        position: absolute;
+        margin: 30px 0px;
+        top: 50%;
+        transform: translateY(-50%); 
+        padding: 0px 220px ;
+        width: 700px;
+        height: 400px;
+
+    }
+        #content-right input{
+            border-radius: 10px;
+            margin-top: 7px;
+            padding: 10px 15px;
+            width:350px;
+            border: 1px solid hsl(270, 3%, 87%) ;
+        }
+        ::placeholder{ 
+            color: hsl(270, 3%, 87%);
+            font-weight: 500;
+
+
+        }
+        #content-right input:focus{
+            outline: 1px solid hsl(278, 94%, 30%, 0.5) ;
+        }
+        #content-right input:invalid{
+            outline: 1px solid hsl(0, 100%, 66%);
+        }
+
+        .exp-cvc{
+            display: flex;
+            gap: 10px;
+            width:381px;
+
+        }
+        #mmyy-div{
+            width: 200px;
+
+        }
+
+    #mmyy-div>input{
+        display: inline-block;
+        width:55px;
+    }
+
+    #cvv-div>input{
+        display: inline-block;
+        width:150px;
+    }
+
+
+    #content-right #submit{
+        display: block;
+        margin: 40px auto;
+        width: 385px;
+        background: hsl(278, 68%, 11%);
+        color: hsl(270, 3%, 95%);
+        padding: 15px 50px;
+        
+    } #submit:focus{border:none}
+
+    #done-div{
+        text-align: center;
+        width:100%;
+        margin-top: 65px;
+
+    }
+    #done-div h2{
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin:30px auto 20px;
         font-weight: 500;
 
 
     }
-    #content-right input:focus{
-        outline: 1px solid hsl(278, 94%, 30%, 0.5) ;
-    }
-    #content-right input:invalid{
-        outline: 1px solid hsl(0, 100%, 66%);
-    }
+    #done-div p{
+        color: hsl(279, 6%, 55%);
+        margin:20px auto 0px;
 
-    .exp-cvc{
-        display: flex;
-        gap: 10px;
-        width:381px;
-
-    }
-    #mmyy-div{
-        width: 200px;
 
     }
 
-#mmyy-div>input{
-    display: inline-block;
-    width:55px;
+    #done-div button{
+        display: block;
+        margin: 55px auto 0;
+        width: 385px;
+        background: hsl(278, 68%, 11%);
+        color: hsl(270, 3%, 95%);
+        padding: 15px 50px;
+        border-radius: 10px;
+
+        border: 1px solid hsl(270, 3%, 87%) ;
+    } #done-div button:focus{border:none}
+
+
+    .attribution {  position: absolute; bottom: 10px; width:100%; font-size: 11px; text-align: center; text-shadow: 0px 0px 1px blueviolet;}
+        .attribution a { color: hsl(228, 45%, 44%); }
+
+    /********************UTILITY***********************
+    *********************CLASSES***********************/
+
+    .hide{
+        display: none;
+    }
 }
+/*
+*******************************************************
+*******************************************************
+*******************************************************
+****************** MOBILE    DESIGN  ******************
+*******************************************************
+*******************************************************
+*******************************************************
+*/
+@media only screen and (max-width: 900px) {
 
-#cvv-div>input{
-    display: inline-block;
-    width:150px;
-}
-
-
-#content-right #submit{
-    display: block;
-    margin: 40px auto;
-    width: 385px;
-    background: hsl(278, 68%, 11%);
-    color: hsl(270, 3%, 95%);
-    padding: 15px 50px;
+        body{
+            display: grid;
+            position: relative;
+            grid-template-rows: 463px auto ;
+            min-height: 100vh;
+            height: 100%;
+            grid-gap: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            min-width: 300px;
+            font-size: 18px;
+            font-weight: 500;
+            color: hsl(270, 3%, 95%);
+            
     
-} #submit:focus{border:none}
-
-#done-div{
-    text-align: center;
-    width:100%;
-    margin-top: 65px;
-
-}
-#done-div h2{
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin:30px auto 20px;
-    font-weight: 500;
-
-
-}
-#done-div p{
-    color: hsl(279, 6%, 55%);
-    margin:20px auto 0px;
-
-
-}
-
-#done-div button{
-    display: block;
-    margin: 55px auto 0;
-    width: 385px;
-    background: hsl(278, 68%, 11%);
-    color: hsl(270, 3%, 95%);
-    padding: 15px 50px;
-    border-radius: 10px;
-
-    border: 1px solid hsl(270, 3%, 87%) ;
-} #done-div button:focus{border:none}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.attribution {  position: absolute; bottom: 10px; width:100%; font-size: 11px; text-align: center; text-shadow: 0px 0px 1px blueviolet;}
-    .attribution a { color: hsl(228, 45%, 44%); }
-
-/********************UTILITY***********************
-*********************CLASSES***********************/
-
-.hide{
-    display: none;
-}
+        }
+    
+        div{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            border: none;
+            
+    
+    
+        }
+    
+        label {
+            text-transform: uppercase;
+            font-size: 13px; 
+            letter-spacing: 1.5px; 
+            text-shadow: 0px 0px 2px hsla(279, 6%, 55%, 0.5) ;
+        }
+    
+    
+        #card-preview{
+            position: relative;
+            left: 120px;
+            height: 570px;
+            top:50%;
+            transform: translateY(-50%)
+    
+        }
+    
+    
+        #bkgrd-left{
+            grid-column: 1/2;
+            position: absolute;
+            z-index: -1;
+            background-image: url('./images/bg-main-desktop.png');
+            width: 465px;
+            background-size: cover;
+            height:100%;
+    
+        }
+    
+        #card-front{
+            position:relative;
+            top: 0px;
+            background-image: url('./images/bg-card-front.png');
+            margin: 20px;
+            height:245px;
+            width:447px;
+            background-repeat: no-repeat;
+            padding: 25px;
+            box-sizing: border-box;
+            font-weight: 400;
+            box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
+            
+        }
+    
+        #card-back{
+            background-image: url('./images/bg-card-back.png');
+            position:relative; 
+            top: 17px;
+            left: 90px;
+            height:245px;
+            width:447px;
+            background-repeat: no-repeat;
+            margin: 20px;
+            box-sizing: border-box;
+            box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
+    
+    
+    
+        }
+    
+        .card-images{
+            position:absolute;
+            height:82px; /*add 2px for margin*/
+            width:40%;
+            
+        }
+    
+        #card-picture-div{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            top:50%;
+            transform: translateY(-50%);
+    
+    
+        }
+        #card-circle-div{
+            position: absolute;
+            left:60px;
+            top:50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+    
+            border:1px solid white;
+            border-radius: 50%;
+    
+    
+        }
+    
+        #card-num{
+            position: relative;
+            top: 115px;
+            color: white;
+            max-width: 440px;
+            text-align:start;
+            letter-spacing: 0.14em;
+            margin: 0px auto;
+            font-size: 28px;
+            
+    
+    
+        }
+    
+        #card-name{
+            position:relative;
+            text-transform: uppercase;
+            justify-content: end;
+    
+        }
+    
+        #name-date{
+            position: relative;
+            top: 132px;
+            margin-bottom: auto;
+            display:flex;
+            gap: 10px;
+            justify-content: space-between;
+            margin: 0px;
+            box-sizing: border-box;
+            padding: 0px;
+            font-size: 13.3px;
+            letter-spacing: 0.17em;
+            
+        }
+    
+        #card-date{
+            position:relative;
+    
+        }
+    
+        #card-cvv{
+            position:relative;
+            top: 113px;
+    
+            left: 50px;
+            width:345px;
+            padding-left: 280px;
+            box-sizing: border-box;
+    
+            font-size: 14px;
+            letter-spacing: 0.17em;
+        }
+    
+        #white-partition{
+            grid-column: 2/3;
+            position: relative;
+            color: hsl(278, 68%, 11%);
+            min-width: 700px;
+            width: 100%;
+            height:100%;
+            color: hsl(278, 68%, 11%);
+            align-items: center;
+            justify-content:center;
+            display: flex;
+    
+        }
+    
+        .content-right{
+            position: absolute;
+            margin: 30px 0px;
+            top: 50%;
+            transform: translateY(-50%); 
+            padding: 0px 220px ;
+            width: 700px;
+            height: 400px;
+    
+        }
+            #content-right input{
+                border-radius: 10px;
+                margin-top: 7px;
+                padding: 10px 15px;
+                width:350px;
+                border: 1px solid hsl(270, 3%, 87%) ;
+            }
+            ::placeholder{ 
+                color: hsl(270, 3%, 87%);
+                font-weight: 500;
+    
+    
+            }
+            #content-right input:focus{
+                outline: 1px solid hsl(278, 94%, 30%, 0.5) ;
+            }
+            #content-right input:invalid{
+                outline: 1px solid hsl(0, 100%, 66%);
+            }
+    
+            .exp-cvc{
+                display: flex;
+                gap: 10px;
+                width:381px;
+    
+            }
+            #mmyy-div{
+                width: 200px;
+    
+            }
+    
+        #mmyy-div>input{
+            display: inline-block;
+            width:55px;
+        }
+    
+        #cvv-div>input{
+            display: inline-block;
+            width:150px;
+        }
+    
+    
+        #content-right #submit{
+            display: block;
+            margin: 40px auto;
+            width: 385px;
+            background: hsl(278, 68%, 11%);
+            color: hsl(270, 3%, 95%);
+            padding: 15px 50px;
+            
+        } #submit:focus{border:none}
+    
+        #done-div{
+            text-align: center;
+            width:100%;
+            margin-top: 65px;
+    
+        }
+        #done-div h2{
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin:30px auto 20px;
+            font-weight: 500;
+    
+    
+        }
+        #done-div p{
+            color: hsl(279, 6%, 55%);
+            margin:20px auto 0px;
+    
+    
+        }
+    
+        #done-div button{
+            display: block;
+            margin: 55px auto 0;
+            width: 385px;
+            background: hsl(278, 68%, 11%);
+            color: hsl(270, 3%, 95%);
+            padding: 15px 50px;
+            border-radius: 10px;
+    
+            border: 1px solid hsl(270, 3%, 87%) ;
+        } #done-div button:focus{border:none}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        .attribution {  position: absolute; bottom: 10px; width:100%; font-size: 11px; text-align: center; text-shadow: 0px 0px 1px blueviolet;}
+            .attribution a { color: hsl(228, 45%, 44%); }
+    
+        /********************UTILITY***********************
+        *********************CLASSES***********************/
+    
+        .hide{
+            display: none;
+        }
+}   
