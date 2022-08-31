@@ -42,9 +42,13 @@
         text-shadow: 0px 0px 2px hsla(279, 6%, 55%, 0.5) ;
     }
 
+    .container{
+        position: relative;
+        height: 100%;
+    }
 
     #card-preview{
-        position: relative;
+        position: absolute;
         left: 120px;
         height: 570px;
         top:50%;
@@ -76,7 +80,9 @@
         box-sizing: border-box;
         font-weight: 400;
         box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
-        
+        border-radius: 15px;
+
+
     }
 
     #card-back{
@@ -90,6 +96,7 @@
         margin: 20px;
         box-sizing: border-box;
         box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
+        border-radius: 15px;
 
 
 
@@ -312,7 +319,7 @@
 */
 @media only screen and (max-width: 900px) {
     :root{
-        --card-scale: calc(0.65)
+        --card-scale: calc(0.7)
     }
 
         body{
@@ -323,7 +330,7 @@
             height: 100vh;
             grid-gap: 20px;
             font-family: 'Space Grotesk', sans-serif;
-            min-width: 350px;
+            min-width: 370px;
             width: 100%;
             font-size: 16px;
             font-weight: 500;
@@ -349,14 +356,23 @@
             text-shadow: 0px 0px 2px hsla(279, 6%, 55%, 0.5) ;
         }
     
-    
+    .container{
+        width:350px;
+        position: relative;
+        left: 50%;
+        height:100%;
+
+        transform: translateX(-50%);
+        
+
+    }
         #card-preview{
             position: absolute;
-            bottom: -40%;
+            bottom: -45px;
             left: -0px;
             height: 370px;
-            border: 1px dashed red; 
-            
+            width:508px;
+            transform-origin: left bottom ;
             transform: scale(var(--card-scale),var(--card-scale));
 
     
@@ -378,7 +394,7 @@
             position:absolute;
             bottom: 0px;
             background-image: url('./images/bg-card-front.png');
-            margin: 10px;
+            margin: 0px;
             height:245px;
             width:447px;
             background-repeat: no-repeat;
@@ -387,7 +403,8 @@
             font-weight: 400;
             box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
             z-index: 5;
-
+            border-radius: 15px;
+            
             
         }
     
@@ -399,9 +416,10 @@
             height:245px;
             width:447px;
             background-repeat: no-repeat;
-            margin: 20px;
+            margin: 0px;
             box-sizing: border-box;
             box-shadow: -110px 20px 200px hsla(0, 0%, 10%, 0.3);
+            border-radius: 15px;
 
             z-index: 4;
 
