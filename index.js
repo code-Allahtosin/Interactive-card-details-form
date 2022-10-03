@@ -12,26 +12,33 @@ function renderText(cardTextid,inputTextid, placeholder){
     } else {    cardTextid.textContent = `${placeholder}`}
 }
 
+function renderNum(cardTextid,inputTextid, placeholder){
+    if (inputTextid.value) {
+        inputTextid.value = orderDigits(inputTextid.value) || ''
+        cardTextid.textContent = inputTextid.value || `${placeholder}`
+        inputTextid.setAttribute("required",'');
+
+    } else {    cardTextid.textContent = `${placeholder}`}
+}
+
 function orderDigits(text){
-    const pattern2=     /\s/g               //spaces removal pattern init
-    const pattern3=     /\d{1,4}/g          //group of four digit pattern init
-  //const text=         "736 4 5666 45567"  //input declaration
+    const pattern2=     /\s/g                             //spaces removal pattern init
+    const pattern3=     /\d{1,4}/g                       //group of four digit pattern init
 
-    muhammad = text.replace(pattern2, '')   //removing the spaces
+    let inputMutated= text.replace(pattern2, '')       //removing the spaces
+                 
+    inputMutated = inputMutated.match(pattern3)      //dividing into an array of 4-digit groups
 
-    let test=muhammad                       //dividing into an array of 4-digit groups
-    test = test.match(pattern3)
-
-    if (test){
-        let test1=""                            //concatenating with spaces inbetween the digit groups
-        let length=test.length
+    if (inputMutated){
+        let output=""                            //concatenating with spaces inbetween the digit groups
+        let length=inputMutated.length
         length=length - 1
         for (let x=0; x < length; x++) { 
-            test1+=test[x]+' '
-        } test1+=test[length]
+            output+=inputMutated[x]+' '
+        } output+=inputMutated[length]
     
-        return test1.substring(0,19)
-    } else return                               // so as to prevent throwing an error.
+        return output.substring(0,19)
+    } else return                       // so as to prevent throwing an error.
 }
 
 
@@ -66,15 +73,15 @@ inputNumber.addEventListener('input',function(){
 })
 
 inputMM.addEventListener('input',function(){
-    renderText(cardMM,inputMM, "MM")
+    renderNum(cardMM,inputMM, "MM")
     movetoNext(inputMM,inputYY)
 })
 inputYY.addEventListener('input',function(){
-    renderText(cardYY,inputYY, "YY")
+    renderNum(cardYY,inputYY, "YY")
     movetoNext(inputYY, inputCVV)
 })
 inputCVV.addEventListener('input',function(){
-    renderText(cardCVV,inputCVV, "000")
+    renderNum(cardCVV,inputCVV, "000")
 })
 
 confirmBtn.addEventListener('click', function(event){
