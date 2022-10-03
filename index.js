@@ -22,14 +22,16 @@ function orderDigits(text){
     let test=muhammad                       //dividing into an array of 4-digit groups
     test = test.match(pattern3)
 
-    let test1=""                            //concatenating with spaces inbetween the digit groups
-    let length=test.length
-    length=length - 1
-    for (let x=0; x < length; x++) { 
-        test1+=test[x]+' '
-    } test1+=test[length]
-
-    return test1.substring(0,19)
+    if (test){
+        let test1=""                            //concatenating with spaces inbetween the digit groups
+        let length=test.length
+        length=length - 1
+        for (let x=0; x < length; x++) { 
+            test1+=test[x]+' '
+        } test1+=test[length]
+    
+        return test1.substring(0,19)
+    } else return                               // so as to prevent throwing an error.
 }
 
 
@@ -56,8 +58,8 @@ inputNumber.addEventListener('input',function(){
 
     if (inputNumber.value) {
         inputNumber.setAttribute("required",'')   
-        inputNumber.value=orderDigits(inputNumber.value)
-        cardNum.textContent = inputNumber.value 
+        inputNumber.value=orderDigits(inputNumber.value)||''
+        cardNum.textContent = inputNumber.value||'0000 0000 0000 0000'
         movetoNext(inputNumber,inputMM)
     } else {cardNum.textContent = `0000 0000 0000 0000`}
  
@@ -76,8 +78,9 @@ inputCVV.addEventListener('input',function(){
 })
 
 confirmBtn.addEventListener('click', function(event){
+    event.preventDefault()
     if (inputName.value &&inputName.checkValidity() && inputNumber.checkValidity() && inputMM.checkValidity() && inputYY.checkValidity() && inputCVV.checkValidity()){
-        event.preventDefault()
+        
         document.getElementById('content-right').classList.add('hide')
         document.getElementById('done-div').classList.remove('hide')
     }
@@ -87,5 +90,3 @@ continueBtn.addEventListener('click', function(){
     window.location.reload()    
 })
 
-console.log('oya oya')
-console.log(inputNumber.value)
